@@ -32,9 +32,9 @@
     
         <button type="button"class="box5"id="machineRandam"value="machineRandam"onclick="changeImg ()">machine Randam</button>
 
-        <div class="box6"id="logTimeOne">00</div>
-        <div class="box6"id="logTimeTwo">00</div>
-        <div class="box6"id="logTimeThree">00</div>
+        <div class="box6"id="logTimeOne">00.00</div>
+        <div class="box6"id="logTimeTwo">00.00</div>
+        <div class="box6"id="logTimeThree">00.00</div>
     </body>
 
     <script type="text/javascript">
@@ -46,7 +46,7 @@ console.log("HTML関係");
 console.log("--------------------------------------");
 
 const h1 = document.getElementsByTagName("h1")[0];
-h1.style.backgroundColor ="yellow";
+h1.style.backgroundColor = "yellow";
 h1.style.color = "red";
 h1.style.textAlign = "center";
 const h2 = document.getElementsByTagName("h2")[0];
@@ -56,23 +56,15 @@ console.log("--------------------------------------");
 console.log("rockPaperScissors");
 console.log("--------------------------------------");
 
-let you = "";
+let yourChoice = "";
 let stopNumber = -1;
 console.log("FirstCondition: " + stopNumber);
 
 function stop(youValue) {
-    you = youValue;
+    yourChoice = youValue;
     stopNumber = 0;
-    console.log("you: " + you, "stopNumber: " + stopNumber);
-
-    // target = document.getElementById("anime_test");
-    // if (target.className == null || target.className=="") {
-    //   target.className = "active";
-    // } else {
-    //   target.className = "";
-
-
-    return you, stopNumber;
+    console.log("yourChoice: " + yourChoice, "stopNumber: " + stopNumber);
+    return yourChoice, stopNumber;
 }
 
 let count = 0;
@@ -81,68 +73,71 @@ function rockPaperScissors() {
     const t0 = performance.now();
     let machine = " ";
     let victoryOfDefeat = " ";
-    let t2 =0;
+    let t2 = 0;
     const result = document.getElementsByClassName("box2");
-    const cycle = document.getElementsByClassName("box6");  
-    machine = randam();   
-    if (typeof machine !== "undefined") {
-        if (you === machine) {
+    const cycleTime = document.getElementsByClassName("box6");
+    machine = randam();
+    if (typeof machine === "string") {
+        if (yourChoice === machine) {
             victoryOfDefeat = "rockPaperScissors";
-        } else if (you === "paper" && machine === "rock" || you === "rock" && machine === "scissors" || you === "scissors" && machine === "paper") {
-            victoryOfDefeat = "YOU WIN !";           
+        } else if (yourChoice === "paper" && machine === "rock" || yourChoice === "rock" && machine === "scissors" || yourChoice === "scissors" && machine === "paper") {
+            victoryOfDefeat = "YOU WIN !";
         } else {
-            victoryOfDefeat = "YOU LOSE!";           
+            victoryOfDefeat = "YOU LOSE!";
         }
-        const t1 = performance.now();
-        t2 = t1 - t0;
+    } else {
+        victoryOfDefeat = "Wrong Procedure.";
     }
     stopNumber = -1;
-    console.log("you: " + you + " machine: " + machine + " " + victoryOfDefeat + " " + "stopNumber: " + stopNumber);
+    const t1 = performance.now();
+    t2 = t1 - t0;
+    console.log("yourChoice: " + yourChoice + " machine: " + machine + " " + victoryOfDefeat + " " + "stopNumber: " + stopNumber);
     console.log("count befor if: ", count);
-    if ( count < 3 ){
+    if (count < 3) {
         result[count].innerText = victoryOfDefeat;
-        cycle[count].innerText = t2.toFixed(2);
-        count +=1;
-        console.log("call to :"+ t2 +"millisseconds")
+        cycleTime[count].innerText = t2.toFixed(2);
+        count += 1;
+        console.log("call to :" + t2 + "millisseconds");
         console.log("count after if: ", count);
-    }else if ( count === 3 ){
+    } else if (count === 3) {
         count = 0;
         console.log("count reset: ", count);
+        console.log("call to reset: " + t2 + "millisseconds");
         result[count].innerText = victoryOfDefeat;
-        cycle[count].innerText = t2.toFixed(2);
-        count +=1;
-    }else{
+        cycleTime[count].innerText = t2.toFixed(2);
+        count += 1;
+    } else {
         console.log("WHY");
     }
-    return alert(victoryOfDefeat); 
+    return alert(victoryOfDefeat);
 }
 
 function randam() {
     let stopNumberTwo = -1;
     stopNumberTwo = stopNumber;
-    let comment = ["Why", "paper", "rock", "scissors"]
-    if (ind < 4) {
+    let comment = [1234, "paper", "rock", "scissors"]
+    if (h < 4) {
         console.log("stopNumberTwo: ", stopNumberTwo);
         if (stopNumberTwo === 0) {
-            // choice(ind);
-            return comment[ind];
-        } 
+            // choice(h);
+            return comment[h];
+        }
     }
 }
 
-let ind = 0;
-let i = 0; 
+let h = 0;
+let i = 0;
 
-function changeImg (){ 
-    if ( i === 4 ){
-        ind = 0;
+function changeImg() {
+    if (i === 4) {
+        h = 0;
         i = 0;
     }
-    ind++ ;
-    console.log(ind)
+    h++;
+    console.log(h);
     let img = document.getElementById("image_Place");
-    img.src = "pic_" + ind + ".png"
+    img.src = "pic_" + h + ".png";
     console.log(img);
-    i = ind + 1;
+    i = h + 1;
 }
     </script>
