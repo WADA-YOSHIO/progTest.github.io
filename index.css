@@ -3,20 +3,11 @@
     max-width: 100%;
     position: absolute;
     left: 50%;
-    /* height: 0px;
-    width: 0px; */
   }
-  /* .picture{
-    resize: both;
-    max-width: 40%;
-    position: absolute;
-    left: 50%;
-    top: 100px;
-  } */
   .box{
     display: inline-flexbox;
-    line-height: 7px;
-    padding: 30px;
+    line-height: 4px;
+    padding: 25px;
     background-color: black;
     color: white;
     text-align: center;
@@ -24,14 +15,14 @@
     position: absolute;
     top: 135px;
     left: 50%;
-    height: 2px;
+    height: 1px;
     width: 50px;
     
   }
   .box2{
     display: inline-flexbox;
-    line-height: 7px;
-    padding: 30px;
+    line-height: 4px;
+    padding: 25px;
     background-color: black;
     color: white;
     text-align: left;
@@ -39,7 +30,7 @@
     position: absolute;
     top: 135px;
     left: 50%;
-    height: 2px;
+    height: 1px;
     width: 150px;
     
   }
@@ -72,8 +63,6 @@
     top: 450px;
     left: 50%;
     max-width: 100%;
-    /* height: auto;
-    width: 150px; */
     width: 100px;
     height: 100px;
   }
@@ -97,8 +86,8 @@
   }
   .box6{
     display: inline-flexbox;
-    line-height: 7px;
-    padding: 30px;
+    line-height: 4px;
+    padding: 25px;
     background-color: black;
     color: white;
     text-align: left;
@@ -106,17 +95,29 @@
     position: absolute;
     top: 135px;
     left: 50%;
-    height: 2px;
+    height: 1px;
+    width: 50px;
+  }
+  .box7{
+    display: inline-flexbox;
+    line-height: 4px;
+    padding: 25px;
+    background-color: rgb(247, 247, 123);
+    color: black;
+    text-align: left;
+    max-width: 100%;
+    position: absolute;
+    top: 135px;
+    left: 50%;
+    height: 1px;
     width: 50px;
   }
   #image_Place{
-    /* position: absolute; */
     left: 50%;
     top: 135px;
     margin-left: -420px;
   }
   #gameStart{
-    /* position: absolute; */
     left: 50%;
     
     margin-left: -100px;
@@ -140,59 +141,64 @@
     margin-left: 70px;
   }
   #logOne{
-    /* position: absolute; */
     left: 50%;
+    top: 180px;
     margin-left: 0px;
   }
   #logTwo{
-    /* position: absolute; */
     left: 50%;
-    top: 200px;
+    top: 235px;
     margin-left: 0px;
   }
   #logThree{
-    /* position: absolute; */
     left: 50%;
-    top: 265px;
+    top: 290px;
     margin-left: 0px;
   }
-  #victoryOfDefeatOne{
-    /* position: absolute; */
+  #Result{
     left: 50%;
+    top: 125px;
+    margin-left: 115px;
+    width: 150px;
+    
+  }
+  #victoryOfDefeatOne{
+    left: 50%;
+    top: 180px;
     margin-left: 115px;
   }
   #victoryOfDefeatTwo{
-    /* position: absolute; */
     left: 50%;
-    top: 200px;
+    top: 235px;
     margin-left: 115px;
   }
   #victoryOfDefeatThree{
-    /* position: absolute; */
     left: 50%;
-    top: 265px;
+    top: 290px;
     margin-left: 115px;
   }
-  #machineRandam{
-    /* position: absolute; */
+  #machineLoop{
     left: 50%;
 
     margin-left: -300px;
   }
-  #logTimeOne{
-    /* position: absolute; */
+  #CT{
     left: 50%;
+    top: 125px;
+    margin-left: 330px;
+  }
+  #logTimeOne{
+    left: 50%;
+    top: 180px;
     margin-left: 330px;
   }
   #logTimeTwo{
-    /* position: absolute; */
     left: 50%;
-    top: 200px;
+    top: 235px;
     margin-left: 330px;
   }
   #logTimeThree{
-    /* position: absolute; */
     left: 50%;
-    top: 265px;
+    top: 290px;
     margin-left: 330px;
   }
