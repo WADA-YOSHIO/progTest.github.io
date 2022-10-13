@@ -12,16 +12,15 @@
         <h1>じゃんけん大会</h1>
         <h2>１０円入れてね</h2>
 
-        <script src="script.js"></script>
-      
-        <img class="picture"id="image_Place"src="pic_0.png">
-     
+        
+       <img class="picture"id="image_Place"src="pic_0.png">
+        
         <a type="button"class="box3"id="gameStart"value="gameStart"onclick="rockPaperScissors()">GAME START</a>  
-      
-        <button type="button"class="box4"id="paper"value="paper"onclick="stop(this.value)">paper</button>  
-        <button type="button"class="box4"id="rock"value="rock"onclick="stop(this.value)">rock</button>  
-        <button type="button"class="box4"id="scissors"value="scissors"onclick="stop(this.value)">scissors</button>  
-     
+        
+        <button type="button"id="paper"value="paper"onclick="stop(this.value)">paper</button>  
+        <button type="button"id="rock"value="rock"onclick="stop(this.value)">rock</button>  
+        <button type="button"id="scissors"value="scissors"onclick="stop(this.value)">scissors</button>  
+        
         <div class="box"id="logOne">N1</div>
         <div class="box"id="logTwo">N2</div>
         <div class="box"id="logThree">N3</div>
@@ -30,16 +29,17 @@
         <div class="box2"id="victoryOfDefeatOne">00</div>
         <div class="box2"id="victoryOfDefeatTwo">00</div>
         <div class="box2"id="victoryOfDefeatThree">00</div>
-    
+        
         <button type="button"class="box5"id="machineLoop"value="machineLoop"onclick="changeImg ()">machine Loop</button>
         
         <div class="box7"id="CT">CT</div>
         <div class="box6"id="logTimeOne">00.00</div>
         <div class="box6"id="logTimeTwo">00.00</div>
         <div class="box6"id="logTimeThree">00.00</div>
-
+        
+        <script src="script.js"></script>
     </body>
-    
+        
     <script type="text/javascript">
 // 1行目に記載している 'use strict' は削除しないでください
 'use strict'
@@ -54,6 +54,9 @@ h1.style.color = "red";
 h1.style.textAlign = "center";
 const h2 = document.getElementsByTagName("h2")[0];
 h2.style.textAlign = "center";
+let targetOfScissors = document.getElementById("scissors")
+let targetOfRock = document.getElementById("rock")
+let targetOfPaper = document.getElementById("paper")
 
 console.log("--------------------------------------");
 console.log("rockPaperScissors");
@@ -67,7 +70,26 @@ function stop(youValue) {
     yourChoice = youValue;
     stopNumber = 0;
     console.log("yourChoice: " + yourChoice, "stopNumber: " + stopNumber);
-    return yourChoice, stopNumber;
+    if ( yourChoice === "scissors" ){
+        targetOfScissors.className = "box8";
+        targetOfRock.className ="";
+        targetOfPaper.className ="";
+        console.log(targetOfScissors);
+    }else if ( yourChoice === "rock" ){
+        targetOfRock.className = "box9";
+        targetOfScissors.className ="";
+        targetOfPaper.className ="";
+    }else if ( yourChoice === "paper" ){
+        targetOfPaper.className = "box4";
+        targetOfScissors.className ="";
+        targetOfRock.className ="";
+    }
+    else{
+        targetOfScissors.className ="";
+        targetOfRock.className ="";
+        targetOfPaper.className ="";
+    }
+    return yourChoice, stopNumber,targetOfScissors,targetOfRock,targetOfPaper;
 }
 
 let count = 0;
@@ -111,6 +133,12 @@ function rockPaperScissors() {
         count += 1;
     } else {
         console.log("WHY");
+    }
+    if ( targetOfScissors.className == "box8" || targetOfRock.className == "box9" || targetOfPaper.className == "box4"){
+        targetOfScissors.className = "";
+        targetOfRock.className = "";
+        targetOfPaper.className = "";
+        console.log(targetOfScissors);
     }
     return alert(victoryOfDefeat);
 }
